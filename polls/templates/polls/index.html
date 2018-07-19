@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polls Index</title>
+</head>
+<body>
+<ul>
+    {% for q in questions %}
+    <li><a href="{% url 'polls:update' q.pk %}">{{ q.question_text }}</a> - <a href="{% url 'polls:hapus' q.pk %}">Hapus</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'polls:create' %}">Tambah Pertanyaan</a>
+
+</body>
+</html>
